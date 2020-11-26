@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-11-26T11:58:46-0800",
+    date = "2020-11-26T15:46:44-0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.9 (Oracle Corporation)"
 )
 @Component
@@ -33,6 +33,7 @@ public class BeerMapperImpl implements BeerMapper {
             beerDto.version( beer.getVersion().intValue() );
         }
         beerDto.createdDate( dateMapper.asOffsetDateTime( beer.getCreatedDate() ) );
+        beerDto.lastModifiedDate( dateMapper.asOffsetDateTime( beer.getLastModifiedDate() ) );
         beerDto.beerName( beer.getBeerName() );
         if ( beer.getBeerStyle() != null ) {
             beerDto.beerStyle( Enum.valueOf( BeerStyleEnum.class, beer.getBeerStyle() ) );
@@ -56,6 +57,7 @@ public class BeerMapperImpl implements BeerMapper {
             beer.version( beerDto.getVersion().longValue() );
         }
         beer.createdDate( dateMapper.asTimestamp( beerDto.getCreatedDate() ) );
+        beer.lastModifiedDate( dateMapper.asTimestamp( beerDto.getLastModifiedDate() ) );
         beer.beerName( beerDto.getBeerName() );
         if ( beerDto.getBeerStyle() != null ) {
             beer.beerStyle( beerDto.getBeerStyle().name() );
