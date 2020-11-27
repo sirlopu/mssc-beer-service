@@ -57,10 +57,11 @@ class BeerControllerTest {
                                 parameterWithName("iscold").description("Is Beer Cold Query param")
                         ),
                         responseFields(
-                                fields.withPath("id").description("Id of Beer").type(UUID.class),
+                                fields.withPath("beerId").description("Id of Beer").type(UUID.class),
                                 fields.withPath("version").description("Version number").type(Integer.class.getTypeName()),
                                 fields.withPath("createdDate").description("Date Created").type(OffsetDateTime.class),
                                 fields.withPath("lastModifiedDate").description("Date Updated").type(OffsetDateTime.class),
+                                fields.withPath("myLocalDate").description("Local Date").type(OffsetDateTime.class),
                                 fields.withPath("beerName").description("Beer Name").type(String.class.getTypeName()),
                                 fields.withPath("beerStyle").description("Beer Style").type(Enum.class.getTypeName()),
                                 fields.withPath("upc").description("UPC of Beer").type(Long.class.getTypeName()),
@@ -84,10 +85,11 @@ class BeerControllerTest {
                 .andExpect(status().isCreated())
                 .andDo(document("v1/beer-post",
                     requestFields(
-                            fields.withPath("id").ignored(),
+                            fields.withPath("beerId").ignored(),
                             fields.withPath("version").ignored(),
                             fields.withPath("createdDate").ignored(),
                             fields.withPath("lastModifiedDate").ignored(),
+                            fields.withPath("myLocalDate").ignored(),
                             fields.withPath("beerName").description("Name of the beer"),
                             fields.withPath("beerStyle").description("Style of Beer"),
                             fields.withPath("upc").description("Beer UPC").attributes(),
@@ -110,10 +112,11 @@ class BeerControllerTest {
                 .andExpect(status().isNoContent())
                 .andDo(document("v1/beer-put",
                         requestFields(
-                                fields.withPath("id").description("Id for Beer to update").type(UUID.class),
+                                fields.withPath("beerId").description("Id for Beer to update").type(UUID.class),
                                 fields.withPath("version").ignored(),
                                 fields.withPath("createdDate").ignored(),
                                 fields.withPath("lastModifiedDate").ignored(),
+                                fields.withPath("myLocalDate").ignored(),
                                 fields.withPath("beerName").description("Name of the beer"),
                                 fields.withPath("beerStyle").description("Style of Beer"),
                                 fields.withPath("upc").description("Beer UPC").attributes(),
