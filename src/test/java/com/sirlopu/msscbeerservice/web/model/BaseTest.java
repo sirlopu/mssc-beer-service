@@ -1,5 +1,7 @@
 package com.sirlopu.msscbeerservice.web.model;
 
+import com.sirlopu.msscbeerservice.bootstrap.BeerLoader;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -15,7 +17,7 @@ public class BaseTest {
                 .createdDate(OffsetDateTime.now())
                 .lastModifiedDate(OffsetDateTime.now())
                 .price(new BigDecimal("12.99"))
-                .upc(123123412341232L)
+                .upc(BeerLoader.BEER_3_UPC)
                 .myLocalDate(LocalDate.now())
                 .build();
                 
