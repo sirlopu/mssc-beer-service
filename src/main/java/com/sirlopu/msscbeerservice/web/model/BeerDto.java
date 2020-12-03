@@ -58,5 +58,4 @@ public class BeerDto {
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate myLocalDate;
 
-
 }

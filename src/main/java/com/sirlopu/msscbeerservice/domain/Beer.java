@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -35,6 +36,7 @@ public class Beer {
 
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
+
     private String beerName;
     private String beerStyle;
 
