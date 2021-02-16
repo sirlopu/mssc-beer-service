@@ -1,4 +1,4 @@
-package com.sirlopu.msscbeerservice.services;
+package com.sirlopu.msscbeerservice.services.brewing;
 
 import com.sirlopu.msscbeerservice.config.JmsConfig;
 import com.sirlopu.msscbeerservice.domain.Beer;
