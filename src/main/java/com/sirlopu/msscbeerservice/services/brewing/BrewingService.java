@@ -2,7 +2,7 @@ package com.sirlopu.msscbeerservice.services.brewing;
 
 import com.sirlopu.msscbeerservice.config.JmsConfig;
 import com.sirlopu.msscbeerservice.domain.Beer;
-import com.sirlopu.msscbeerservice.events.BrewBeerEvent;
+import com.sirlopu.common.events.BrewBeerEvent;
 import com.sirlopu.msscbeerservice.repositories.BeerRepository;
 import com.sirlopu.msscbeerservice.services.inventory.BeerInventoryService;
 import com.sirlopu.msscbeerservice.web.mappers.BeerMapper;

@@ -2,8 +2,8 @@ package com.sirlopu.msscbeerservice.services.brewing;
 
 import com.sirlopu.msscbeerservice.config.JmsConfig;
 import com.sirlopu.msscbeerservice.domain.Beer;
-import com.sirlopu.msscbeerservice.events.BrewBeerEvent;
-import com.sirlopu.msscbeerservice.events.NewInventoryEvent;
+import com.sirlopu.common.events.BrewBeerEvent;
+import com.sirlopu.common.events.NewInventoryEvent;
 import com.sirlopu.msscbeerservice.repositories.BeerRepository;
 import com.sirlopu.msscbeerservice.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +32,8 @@ public class BrewBeerListener {
         beerDto.setQuantityOnHand(beer.getQuantityToBrew());
 
         NewInventoryEvent newInventoryEvent = new NewInventoryEvent(beerDto);
+
+        log.debug("Brewed beer " + beer.getMinOnHand() + " : QOH: " + beerDto.getQuantityOnHand());
 
         jmsTemplate.convertAndSend(JmsConfig.NEW_INVENTORY_QUEUE, newInventoryEvent);
     }

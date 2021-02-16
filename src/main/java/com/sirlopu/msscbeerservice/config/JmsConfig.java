@@ -15,7 +15,7 @@ public class JmsConfig {
     public static final String MY_SEND_RCV_QUEUE = "replybacktome";
     public static final String NEW_INVENTORY_QUEUE = "new-inventory";
 
-    @Bean
+    @Bean // Serialize message content to json using TextMessage
     public MessageConverter jacksonJmsMessageConverter(ObjectMapper objectMapper){
         MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
         converter.setTargetType(MessageType.TEXT);

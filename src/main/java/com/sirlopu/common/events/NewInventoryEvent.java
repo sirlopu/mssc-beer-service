@@ -1,4 +1,4 @@
-package com.sirlopu.msscbeerservice.events;
+package com.sirlopu.common.events;
 
 import com.sirlopu.msscbeerservice.web.model.BeerDto;
 import lombok.NoArgsConstructor;
